@@ -1,28 +1,183 @@
-public/ ├── index.html ├── style.css └── script.js
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Lívia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        
+        body {
+            background-color: #ffffff;
+            color: #d63384;
+            font-family: 'Great Vibes', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .text-box {
+            padding: 20px;
+            background: #fff0f5;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: left;
+        }
+        .text-box p {
+            font-size: 18px;
+            color: #d63384;
+            line-height: 1.6;
+        }
+        .password-container {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .password-container input {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #d63384;
+            border-radius: 5px;
+            text-align: center;
+            outline: none;
+        }
+        .password-container button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background: #d63384;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .password-container button:hover {
+            background: #b3226e;
+        }
+        .error-message {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 24px;
+            color: #d63384;
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+    </style>
+    <script>
+        function showPopup() {
+            document.getElementById("popup").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("popup").style.display = "none";
+            }, 3000);
+        }
+        
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var errorMessage = document.getElementById("error-message");
+            
+            if (password === "Livia2025") {
+                document.getElementById("password-container").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            } else {
+                errorMessage.style.display = "block";
+                errorMessage.innerHTML = "❌ Senha incorreta! Tente novamente.";
+            }
+        }
+        
+        window.onload = function() {
+            showPopup();
+        };
+    </script>
+</head>
+<body>
+    <div id="popup" class="popup">❤️ Feliz Páscoa! ❤️</div>
+    
+    <div id="password-container" class="password-container">
+        <h2>Lívia, digite a senha para acessar</h2>
+        <input type="password" id="password" placeholder="Senha">
+        <button onclick="checkPassword()">Entrar</button>
+        <p id="error-message" class="error-message"></p>
+    </div>
+    
+    <div id="content" class="container">
+        <h1>Para Lívia</h1>
+        
+        <div class="text-box">
+            <p><strong>"Brilho Único"</strong></p>
+            <p>Se cada raio de sol refletisse você,  
+            O mundo inteiro ia resplandecer.  
+            Teu jeito ilumina, tua voz acalma,  
+            Tua presença é paz que toca a alma.</p>
+        </div>
 
-/* index.html */
+        <div class="text-box">
+            <p><strong>"Teu Caminho"</strong></p>
+            <p>Caminhas leve, segura e serena,  
+            Como brisa suave na tarde pequena.  
+            Em cada passo, um verso se forma,  
+            Escrevendo tua história de forma tão bela.</p>
+        </div>
 
-Para Lívia 
+        <div class="text-box">
+            <p><strong>"Inspiração"</strong></p>
+            <p>Se a vida é um livro, és minha poesia,  
+            Versos suaves de pura harmonia.  
+            Cada linha que escrevo, cada palavra sentida,  
+            Tem teu nome gravado em cada batida.</p>
+        </div>
 
-❤️ Feliz Páscoa! ❤️
+        <div class="text-box">
+            <p><strong>"Luz e Essência"</strong></p>
+            <p>Se um dia o céu perder sua cor,  
+            Ainda haverá em ti todo o esplendor.  
+            Tua essência é rara, brilho sem fim,  
+            Como um poema que nunca tem fim.</p>
+        </div>
 
-Digite a senha para acessar Entrar 
+        <div class="text-box">
+            <p><strong>"Para Lívia"</strong></p>
+            <p>Se cada estrela do céu pudesse falar,  
+            Contaria histórias sobre teu olhar.  
+            Brilha mais que todas, reluz sem igual,  
+            Um encanto doce, um mistério real.</p>
 
-Para Lívia 
+            <p>O tempo ao teu lado não quer mais passar,  
+            E quando se vai, só deixa o pensar.  
+            Que sorte a minha poder te ver,  
+            E em cada verso te pertencer.</p>
+        </div>
 
-Poema 1...
-
-Poema 2...
-
-Poema 3...
-
-Poema 4...
-
-Poema especial feito por Carlos...
-
-Sim, eu criei este site só pra você KKKKKK 
-
-/* style.css */ body { background-color: white; color: red; font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; } .container { max-width: 800px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); } .popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 15px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); font-size: 24px; color: red; font-weight: bold; text-align: center; } #error-message { color: red; font-size: 14px; display: none; }
-
-/* script.js */ function showPopup() { document.getElementById("popup").style.display = "block"; setTimeout(function() { document.getElementById("popup").style.display = "none"; }, 3000); } function checkPassword() { var password = document.getElementById("password").value; if (password === "Livia2025") { document.getElementById("password-container").style.display = "none"; document.getElementById("content").style.display = "block"; } else { var errorMessage = document.getElementById("error-message"); errorMessage.innerText = "Senha incorreta! Tente novamente."; errorMessage.style.display = "block"; } } window.onload = function() { showPopup(); };
-
+        <p style="margin-top: 20px; font-size: 20px; color: #d63384;">Com carinho, Carlos</p>
+        <p style="margin-top: 10px; font-size: 16px; color: #555;">E sim, eu criei esse site só pra você KKKKKK</p>
+    </div>
+</body>
+</html>
